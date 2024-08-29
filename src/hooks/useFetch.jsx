@@ -8,7 +8,7 @@ const useFetch = (callback, options = {}) => {
 
     const { session } = useSession()
 
-    const func = async (...args) => {
+    const fn = async (...args) => {
         setLoading(true)
         setError(null)
 
@@ -21,12 +21,12 @@ const useFetch = (callback, options = {}) => {
             setError(null)
         } catch (error) {
             setError(error)
-        }
-        finally {
+        } finally {
             setLoading(false)
         }
     }
-    return { func, data, loading, error }
+
+    return { fn, data, loading, error }
 }
 
 export default useFetch
