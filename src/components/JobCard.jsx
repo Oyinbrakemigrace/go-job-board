@@ -33,7 +33,7 @@ const JobCard = ({ job, isMyJob = false, savedInit = false, onJobSaved = () => {
     return (
         <Card className='flex flex-col'>
             <CardHeader>
-                <CardTitle className="flex justify-between font-bold">
+                <CardTitle className="flex capitalize justify-between font-bold">
                     {job.title}
                     {!isMyJob && (<Trash2Icon fill='red' size={18} className='text-red-300 cursor-pointer' />)}
                 </CardTitle>
