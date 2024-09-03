@@ -1,6 +1,6 @@
 import { getCompanies } from '@/api/apiCompanies'
 import { addNewJob } from '@/api/apiJobs'
-import AddCompanyDrawer from '@/components/addCompanyDrawer'
+import AddCompanyDrawer from '@/components/AddCompanyDrawer'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
