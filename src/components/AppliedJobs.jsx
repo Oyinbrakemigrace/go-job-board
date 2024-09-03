@@ -18,7 +18,7 @@ const AppliedJobs = () => {
     },[])
 
     if(!isLoaded){
-        return <BarLoader className='mb-4' width={"100%"} color='#fe5'/>
+        return <BarLoader className='mb-4' width={"100%"} color='#524f75'/>
     }
 
     return (

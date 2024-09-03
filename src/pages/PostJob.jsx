@@ -1,6 +1,7 @@
 import { getCompanies } from '@/api/apiCompanies'
 import { addNewJob } from '@/api/apiJobs'
 import AddCompanyDrawer from '@/components/AddCompanyDrawer'
+import Heading from '@/components/Heading'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -53,7 +54,7 @@ const PostJob = () => {
 
 
   if (!isLoaded || loadingComapanies) {
-    return <BarLoader className='mb-4' width={"100%"} color='#fe5' />
+    return <BarLoader className='mb-4' width={"100%"} color='#524f75' />
   }
 
   //candidates should not be able to access this page
@@ -71,7 +72,7 @@ const PostJob = () => {
 
   return (
     <div>
-      <h1 className='gradient-title font-extrabold text-5xl sm:text-7xl text-center pb-8'>Post a Job</h1>
+      <Heading title="Post a Job"/>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4 p-4 pb-0'>
         <Input
           placeholder="Enter job's title"
@@ -94,7 +95,7 @@ const PostJob = () => {
                 onValueChange={field.onChange}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Filter by location" />
+                  <SelectValue placeholder="Select location" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
@@ -117,7 +118,7 @@ const PostJob = () => {
                 onValueChange={field.onChange}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Filter by companies">
+                  <SelectValue placeholder="Select company">
                     {
                       field.value ? companies?.find((company) => company.id === Number(field.value))?.name : "Company"
                     }
@@ -170,9 +171,9 @@ const PostJob = () => {
           )
         }
         {
-          loadingCreateJob && <BarLoader width={"100%"} color='#fe5' />
+          loadingCreateJob && <BarLoader width={"100%"} color='#524f75' />
         }
-        <Button type="submit" variant="blue" size="lg" className="mt-2">
+        <Button type="submit" variant="orangeBlue" size="lg" className="mt-2 text-white">
           Post Job
         </Button>
       </form>

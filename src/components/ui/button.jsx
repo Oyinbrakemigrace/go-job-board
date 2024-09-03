@@ -16,8 +16,10 @@ const buttonVariants = cva(
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:drop-shadow-md bg-accent hover:text-accent-foreground",
         blue: "bg-blue-500 hover:bg-blue-600", //added this myself since i needed a custom class.
+        orangeBlue: "bg-gradient-to-br from-[#F36B16] to-[#524f75] hover:drop-shadow-lg", //added this myself since i needed a custom class.
+        oneTime: "hover:drop-shadow-lg text-zinc-600 border border-[#524f75]", //added this myself since i needed a custom class.
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

@@ -42,7 +42,8 @@ const AddCompanyDrawer = ({ fetchCompanies }) => {
         <Drawer>
             <DrawerTrigger>
                 <Button
-                    variant="secondary"
+                    className="text-white"
+                    variant="orangeBlue"
                     size="sm"
                     type="button"
                 >Add company</Button>
@@ -50,21 +51,21 @@ const AddCompanyDrawer = ({ fetchCompanies }) => {
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Add a new company</DrawerTitle>
-                    <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                    <DrawerDescription>Add company by name and logo image</DrawerDescription>
                 </DrawerHeader>
                 <form className='flex gap-2 p-4 pb-0'>
                     <Input type="text" placeholder="Enter company's name" {...register("name")} />
                     <Input
                         type="file"
                         accept="image/*"
-                        className="file:text-gray-500"
+                        className="file:text-gray-500 cursor-pointer"
                         {...register("logo")}
                     />
                     <Button
                         type="button"
                         onClick={handleSubmit(onSubmit)}
-                        variant="destructive"
-                        className="w-40"
+                        variant="orangeBlue"
+                        className="w-40 text-white"
                     >
                         Add
                     </Button>
@@ -72,10 +73,10 @@ const AddCompanyDrawer = ({ fetchCompanies }) => {
                 {errors?.name && <p className='text-red-500'>{errors?.name?.message}</p>}
                 {errors?.logo && <p className='text-red-500'>{errors?.logo?.message}</p>}
                 {newCompanyError?.message && (<p className='text-red-500'>{newCompanyError?.message}</p>)}
-                {loadingNewCompany && <BarLoader width={"100%"} color='#fe5' />}
+                {loadingNewCompany && <BarLoader width={"100%"} color='#524f75' />}
                 <DrawerFooter>
                     <DrawerClose asChild>
-                        <Button variant="secondary" type="button">Cancel</Button>
+                        <Button variant="ghost" type="button">Cancel</Button>
                     </DrawerClose>
                 </DrawerFooter>
             </DrawerContent>

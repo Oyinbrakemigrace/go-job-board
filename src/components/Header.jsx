@@ -27,9 +27,9 @@ const Header = () => {
         <>
             <nav className='flex justify-between items-center py-4'>
                 <Link>
-                    <img src='/vite.svg' className='h-20' />
+                    <h1 className='h-full gradient-title font-extrabold lg:font-bold lg:text-4xl tracking-tighter'>GO JobBoard</h1>
                 </Link>
-                <div className='flex gap-8'>
+                <div className='flex lg:gap-8 gap-6'>
                     <SignedOut>
                         <Button variant="outline" onClick={() => setShowSignin(true)}>Login</Button>
                     </SignedOut>
@@ -37,7 +37,7 @@ const Header = () => {
                     <SignedIn>
                         {
                             user?.unsafeMetadata?.role === "recruiter" && <Link to="/post-job">
-                                <Button variant="destructive" className='rounded-full'>
+                                <Button variant="orangeBlue" className='rounded-full text-white'>
                                     <PenBox size={20} className='mr-2' />
                                     Post a Job
                                 </Button>
@@ -46,7 +46,9 @@ const Header = () => {
                         <UserButton appearance={{
                             elements: {
                                 avatarBox: "w-10 h-10"
-                            }
+                            },
+                            
+                        
                         }}>
                             <UserButton.MenuItems>
                                 <UserButton.Link

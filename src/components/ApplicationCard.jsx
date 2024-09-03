@@ -22,7 +22,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
 
     return (
         <Card>
-            {loadingHiringStatus && <BarLoader width={"100%"} color='#fe5' />}
+            {loadingHiringStatus && <BarLoader width={"100%"} color='#524f75' />}
             <CardHeader>
                 <CardTitle className="flex justify-between font-bold">
                     {
@@ -58,7 +58,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
                         <>
                             <Select onValueChange={handleStatusChange} defaultValue={application.status}>
                                 <SelectTrigger
-                                className="w-52"
+                                        className="w-52  text-zinc-800"
                                 >
                                     <SelectValue
                                         placeholder="Application status"

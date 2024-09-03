@@ -42,7 +42,7 @@ const JobCard = ({ job, isMyJob = false, savedInit = false, onJobSaved = () => {
         <Card className='flex flex-col'>
             {
                 loadingDeletedJob && (
-                    <BarLoader className='mb-4' width={"100%"} color='#fe5' />
+                    <BarLoader className='mb-4' width={"100%"} color='#524f75' />
                 )
             }
             <CardHeader>
@@ -68,7 +68,7 @@ const JobCard = ({ job, isMyJob = false, savedInit = false, onJobSaved = () => {
             </CardContent>
             <CardFooter>
                 <Link to={`/job/${job.id}`} className='flex-1'>
-                    <Button variant="secondary" className="w-full">
+                    <Button variant="secondary" className="w-full text-zinc-700">
                         More Details
                     </Button>
                 </Link>
