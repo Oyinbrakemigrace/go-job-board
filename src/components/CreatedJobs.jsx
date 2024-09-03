@@ -22,7 +22,7 @@ const CreatedJobs = () => {
 
     if(!isLoaded || loadingCreatedJobs){
         return(
-            <BarLoader className='mb-4' width={"100%"} color='#fe5'/>
+            <BarLoader className='mb-4' width={"100%"} color='#524f75'/>
         )
     }
 

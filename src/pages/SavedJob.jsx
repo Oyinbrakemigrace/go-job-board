@@ -1,4 +1,5 @@
 import { getSavedJobs } from '@/api/apiJobs'
+import Heading from '@/components/Heading'
 import JobCard from '@/components/JobCard'
 import useFetch from '@/hooks/useFetch'
 import { useUser } from '@clerk/clerk-react'
@@ -20,12 +21,12 @@ const SavedJob = () => {
   },[isLoaded])
 
   if(!isLoaded || loadingSavedJobs){
-    return <BarLoader className='mb-4' width={"100%"} color="#fe5" />
+    return <BarLoader className='mb-4' width={"100%"} color="#524f75" />
   }
 
   return (
     <div>
-      <h1 className='gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8'>Saved Jobs</h1>
+      <Heading title="Saved Jobs"/>
       {
         loadingSavedJobs === false && (
           <div className='mt- grid md:grid-cols-2 lg:grid-cols-3 gap-4'>

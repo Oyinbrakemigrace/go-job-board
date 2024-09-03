@@ -61,7 +61,7 @@
 
 @layer utilities {
   .gradient{
-    @apply bg-gradient-to-br from-gray-500 via-gray-200 to-white
+    @apply bg-gradient-to-br from-[#F36B16] via-[#524f75] to-[#F36B16]
   }
   .gradient-title{
     @apply gradient text-transparent bg-clip-text
@@ -78,7 +78,7 @@
 }
 
 .wmde-markdown ul{
-  list-style-type: disc;
+  list-style-type: square;
   padding-left: 25px;
-  color: white;
+  color: black;
 }

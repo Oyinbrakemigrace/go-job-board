@@ -16,6 +16,7 @@ import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import ApplyJobDrawer from "@/components/ApplyJobDrawer";
 import ApplicationCard from "@/components/ApplicationCard";
+import Heading from "@/components/Heading";
 
 const JobPage = () => {
   const { isLoaded, user } = useUser();
@@ -43,15 +44,13 @@ const JobPage = () => {
   }, [isLoaded]);
 
   if (!isLoaded) {
-    return <BarLoader className="mb-4" width={"100%"} color="#fe5" />;
+    return <BarLoader className="mb-4" width={"100%"} color="#524f75" />;
   }
 
   return (
     <div className="flex flex-col gap-8 mt-5">
       <div className="flex flex-col-reverse gap-6 md:flex-row justify-between items-center">
-        <h1 className="gradient-title capitalize font-extrabold sm:text-6xl text-4xl">
-          {job?.title}
-        </h1>
+        <Heading title={job?.title} />
         <img src={job?.company?.logo_url} alt={job?.title} className="h-12" />
       </div>
 
@@ -80,7 +79,7 @@ const JobPage = () => {
       {job?.recruiter_id === user?.id && ( //this means that it is a recruiter
         <Select onValueChange={handleStatusChange}>
           <SelectTrigger
-            className={`w-full ${job?.isOpen ? "bg-green-950" : "bg-red-950"}`}
+            className={`w-full text-white ${job?.isOpen ? "bg-green-700" : "bg-red-700"}`}
           >
             <SelectValue
               placeholder={
@@ -97,10 +96,10 @@ const JobPage = () => {
         </Select>
       )}
 
-      <h2 className="text-2xl sm:text-3xl font-bold">About the Job</h2>
+      <h2 className="text-2xl gradient-title sm:text-3xl font-bold">About the Job</h2>
       <p>{job?.description}</p>
 
-      <h2 className="text-2xl sm:text-3xl font-bold">
+      <h2 className="text-2xl gradient-title sm:text-3xl font-bold">
         What we are looking for
       </h2>
       <MDEditor.Markdown
@@ -121,7 +120,7 @@ const JobPage = () => {
       {
         job?.applications?.length > 0 && job?.recruiter_id === user?.id && (
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl sm:text-3xl font-bold">
+            <h2 className="text-2xl gradient-title sm:text-3xl font-bold">
               Applications
             </h2>
             {

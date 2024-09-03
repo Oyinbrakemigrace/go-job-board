@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import React, { useEffect, useState } from 'react'
 import { BarLoader } from 'react-spinners'
 import { State } from 'country-state-city'
+import Heading from '@/components/Heading'
 
 const JobListing = () => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -30,7 +31,7 @@ const JobListing = () => {
 
 
   if (!isLoaded) {
-    return <BarLoader className='mb-4' width={'100%'} color='#fe5' />
+    return <BarLoader className='mb-4' width={'100%'} color='#524f75' />
   }
 
   const handleSearch = (e) => {
@@ -51,9 +52,7 @@ const JobListing = () => {
 
   return (
     <div>
-      <h1 className='gradient-title font-extrabold text-5xl sm:text-7xl text-center pb-8'>
-        Latest Jobs
-      </h1>
+      <Heading title="Latest Jobs"/>
 
       <form onSubmit={handleSearch} className='h-14 flex gap-2 w-full items-center mb-3'>
         <Input
@@ -62,7 +61,7 @@ const JobListing = () => {
           name="search-query"
           className="h-full flex-1 px-4 text-md"
         />
-        <Button type="submit" variant="blue" className="h-full sm:w-20">
+        <Button type="submit" variant="orangeBlue" className="h-full sm:w-20 text-white">
           Search
         </Button>
       </form>
@@ -98,12 +97,12 @@ const JobListing = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button onClick={clearFilters} variant="destructive" className="sm:w-1/5">Clear filters</Button>
+        <Button onClick={clearFilters} variant="ghost" className="sm:w-1/5">Clear filters</Button>
       </div>
 
       {
         loadingJobs && (
-          <BarLoader className='mt-4' width={'100%'} color='#fe5' />
+          <BarLoader className='mt-4' width={'100%'} color='#524f75' />
         )
       }
       {
