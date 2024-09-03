@@ -45,10 +45,24 @@ export async function updateApplicationsStatus(token, { job_id }, status) {
     .eq("job_id", job_id)
     .select();
 
-    if(error || data.length === 0){
-      console.error("Error updating applications", error)
+  if (error || data.length === 0) {
+    console.error("Error updating applications", error);
+    return null;
+  }
+  return data;
+}
+
+export async function getMyApplications(token, { user_id }) {
+  const supabase = await supabaseClient(token);
+
+  const { data, error } = await supabase
+    .from("applications")
+    .select("*, job:jobs(title, company:companies(name))")
+    .eq("candidate_id", user_id);
+
+    if(error){
+      console.error("Error fetching applications", error)
       return null
     }
     return data
 }
-
