@@ -25,9 +25,9 @@ const Header = () => {
 
     return (
         <>
-            <nav className='flex justify-between items-center py-4'>
+            <nav className='flex justify-between items-center py-4 px-5'>
                 <Link>
-                    <h1 className='h-full gradient-title font-extrabold lg:font-bold lg:text-4xl tracking-tighter'>GO JobBoard</h1>
+                    <h1 className='h-full gradient-title font-extrabold lg:font-bold lg:text-4xl text-xl tracking-tighter'>GO JobBoard</h1>
                 </Link>
                 <div className='flex lg:gap-8 gap-6'>
                     <SignedOut>
@@ -36,7 +36,7 @@ const Header = () => {
 
                     <SignedIn>
                         {
-                            user?.unsafeMetadata?.role === "recruiter" && <Link to="/post-job">
+                            user?.unsafeMetadata?.role === "recruiter" && <Link to="/post-job" className=' hidden lg:block'>
                                 <Button variant="orangeBlue" className='rounded-full text-white'>
                                     <PenBox size={20} className='mr-2' />
                                     Post a Job

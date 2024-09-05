@@ -51,7 +51,7 @@ const JobListing = () => {
   }
 
   return (
-    <div>
+    <div className='px-5'>
       <Heading title="Latest Jobs"/>
 
       <form onSubmit={handleSearch} className='h-14 flex gap-2 w-full items-center mb-3'>
