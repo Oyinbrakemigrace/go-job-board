@@ -48,7 +48,7 @@ const JobPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 mt-5">
+    <div className="flex flex-col gap-8 mt-5 px-5">
       <div className="flex flex-col-reverse gap-6 md:flex-row justify-between items-center">
         <Heading title={job?.title} />
         <img src={job?.company?.logo_url} alt={job?.title} className="h-12" />

@@ -25,7 +25,7 @@ const SavedJob = () => {
   }
 
   return (
-    <div>
+    <div className='px-5'>
       <Heading title="Saved Jobs"/>
       {
         loadingSavedJobs === false && (

@@ -13,7 +13,7 @@ const MyJobs = () => {
   }
 
   return (
-    <div>
+    <div className='px-5'>
       <Heading title={user?.unsafeMetadata?.role === "candidate" ? "Applied Jobs" : "Created Jobs"}/>
       {
         user?.unsafeMetadata?.role === "candidate" ? <AppliedJobs /> : <CreatedJobs />

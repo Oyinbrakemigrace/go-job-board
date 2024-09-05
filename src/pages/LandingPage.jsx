@@ -14,7 +14,7 @@ const LandingPage = () => {
         <div className='flex flex-col items-center justify-center text-zinc-700 text-3xl font-extrabold sm:text-6xl lg:text-7xl lg:tracking-tight lg:leading py-4'>
           <h1>Discover Your <span className='gradient-title w-full'>Ideal Job </span>and Secure Your Next Opportunity!</h1>
         </div>
-        <p className='text-zinc-500 sm:mt-4 text-xs sm:text-xl'>
+        <p className='text-zinc-500 lg:px-0 px-4 sm:mt-4 text-xs sm:text-xl'>
           Explore a vast range of job listings or connect with the perfect candidate.
         </p>
       </section>
@@ -31,7 +31,7 @@ const LandingPage = () => {
         </Link>
       </div>
 
-      <section className="w-full py-10">
+      <section className="w-full py-10 -z-50">
         <Marquee speed={100} pauseOnHover={true}>
           <div className='flex space-x-10 justify-center items-center'>
             {
@@ -47,7 +47,7 @@ const LandingPage = () => {
 
       <img src="/banner.jpg" alt="" className='w-full' />
 
-      <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <section className='grid grid-cols-1 md:grid-cols-2 gap-4 px-5'>
         <Card>
           <CardHeader>
             <CardTitle className="text-zinc-100">For Job Seekers</CardTitle>
@@ -69,7 +69,7 @@ const LandingPage = () => {
 
       <section>
         <h3 className='gradient-title text-center font-semibold lg:text-5xl text-4xl pb-5'>Frequently asked questions</h3>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible className='px-5'>
           {
             faqs.map((faq, index) => {
               return (<AccordionItem key={index} value={`item-${index + 1}`}>
